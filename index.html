@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+	<title>Portfolio- David Erbelding</title>
+	<link href="styles.css" type="text/css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Monda" rel="stylesheet">
+    
+    <!-- Add jQuery library -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+	<!-- Add fancyBox -->
+	<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<!-- Optionally add helpers - button, thumbnail and/or media -->
+	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+    <script>
+		$(document).ready(function() {
+			$(".fancybox").fancybox();
+		});
+	</script>
+</head>
+<body>
+<div id = "wrapper">
+	<div id = "header">
+		<h1>David<br/>Erbelding</h1>
+        <h2>Game Designer and Programmer</h2>
+	</div>
+	<div id = "nav">
+		<a id="showMainPage"><div class=current>Projects</div></a>
+		<a id="showResumePage"><div>Resume</div></a>
+        <a target="_blank" href="https://github.com/Erbelding"><div>GitHub</div></a>
+	</div>
+    
+    
+	<div class = "middle" id="mainPage">
+		<div class=tile><a id="showHatchitPage">
+			<h3>Hatchit</h3>
+			<img class=tile src="Images/hatchit.ico" alt="" /></a>
+        </div>
+		<div class=tile><a id="showMineshaftMayhemPage">
+			<h3>Mineshaft Mayhem</h3>
+			<img class=tile src="Images/Mineshaft1.png" alt="" /></a>
+		</div>
+		<div class=tile><a id="showCheatingDeathPage">
+			<h3>Cheating Death</h3>
+			<img class=tile src="Images/CheatingDeathIcon.png" alt="" /></a>
+		</div>
+		<div class=tile><a id="showSoulBoundPage">
+			<h3>Soul Bound</h3>
+			<img class=tile src="Images/soulbound.png" alt="" /></a>
+		</div>
+		<div class=tile><a id="showAtlasPage">
+			<h3>Atlas</h3>
+			<img class=tile src="Images/atlas.png" alt="" /></a>
+		</div>
+	</div>
+    
+    
+    <div class="middle" id="hatchitPage" style="display:none;">
+		<!--Description-->
+		<div class=doubletile>
+			<p class=text>
+                After working on Mineshaft Mayhem, I was frustrated with the locked pipelines of most main stream game engines. 
+                I wanted to try doing things differently, so I gathered some students who had been working on similar projects, and pitched my idea.
+                The project was titled Hatchit, and began development in early 2016.
+                Hatchit is an open source engine that gives developers as much control over the pipeline as possible.
+			</p><p class=text>
+				Not long after we began planning the project, Vulkan was released. 
+                If we could get this thing to work, it would be amazing. 
+			</p><p class=text>
+                Unsurprisingly, it was hard. There was basically no information available, and the Vulkan documentation was... difficult to read.
+                At first, we wanted to support both Vulkan and DirectX12, but later on, we ditched DirectX in favor of having one thing that worked.
+                We ran into problems with our content managment system. 
+                I struggled with SSE while trying to write a math library. 
+                We ran into some really frustrating bugs when we tried to multithread certain parts of the graphics process.
+			</p><p class=text>
+                After 15 weeks of smashing our faces into our keyboards, we had a couple of models and some lights. 
+                I don't think I've ever been so happy to see shapes and colors on a screen.
+            </p>
+		</div>
+		<!--Link to github page-->
+		<div class=tile>
+            <a target="_blank" href="https://github.com/thirddegree/Hatchit">
+                <h3>On Github</h3>
+                <img class=tile src="Images/hatchit.ico" alt="" />
+            </a>
+		</div>
+	</div>
+    
+    
+    
+	<div class="middle" id="mineshaftMayhemPage" style="display:none;">
+		<!--Description-->
+		<div class=doubletile>
+			<p class=text>
+                Mineshaft Mayhem is an endless runner game I developed with a team in Fall 2015. 
+                The player must avoid collisions with rocks and other obstacles, and 
+                gains score based on distance traveled, and by collecting gems distributed along the track. 
+			</p><p class=text>
+				The gameplay is relatively simple, but the main focus of our project was the graphics. 
+                In order to quickly prototype the game and get it to work, we used a lua binding library, and wrote all of our game logic in scripts.
+                I probably wouldn't do it that way again. It was cool, but it was also really slow.
+                The project was developed from scratch in C++ in a custom engine with DirectX11. 
+			</p><p class=text>
+                Most prominently among the games graphical effects is the bending track. 
+                Although it appears to curve, the track is actually entirely straight. 
+                I developed a system that used the vertex shader to dynamically transform the positions of vertices being rendered. 
+                At first, the effect was as simple as applying a downward curve to the track, but I wasn't happy with how it looked.
+                I started playing with trig curves to try to get a hills, which looked awesome, but watching it was making people nauseous. 
+                I later realized that this could be improved by rotating everything ever so slightly so that the camera was facing the same direction as the cart. 
+			</p><p class=text>
+                Then came another problem: Lighting. 
+                Normal lighting calculations weren't going to work, because the geometry and lights weren't in the same coordinate space. 
+                The only way to fix it was to use a deferred shading pipeline.
+                Nobody on the project had every done any serious graphics programming before, so this was a serious challenge.
+                It took up the majority of my time on the project, but it was worth it.
+			</p>
+		</div>
+		<!--Card Gallery-->
+		<div class=tile>
+            <a href="Images/Mineshaft1.png" class="fancybox" data-fancybox-group="mmscreenshots"
+               title="The title screen. We didn't have time for any kind of ui.">
+                <h3>Screenshots</h3>
+                <img class=tile src="Images/Mineshaft1.png">
+            </a>
+            <a href="Images/Mineshaft2.png" class="fancybox" data-fancybox-group="mmscreenshots"
+               title="Players collect gems and powerups, and avoid obstacles."></a>
+            <a href="Images/Mineshaft3.png" class="fancybox" data-fancybox-group="mmscreenshots"
+               title="Some areas on the track have very sharp turns"></a>
+            <a href="Images/Mineshaft4.png" class="fancybox" data-fancybox-group="mmscreenshots"
+               title="The game without the curve effect."></a>
+            <a href="Images/Mineshaft5.png" class="fancybox" data-fancybox-group="mmscreenshots"
+               title="Part of the geometry step. We draw the color of everything to one texture."></a>
+            <a href="Images/Mineshaft6.png" class="fancybox" data-fancybox-group="mmscreenshots"
+               title="The normals are also written to a texture in the geometry step."></a>
+            <a href="Images/Mineshaft7.png" class="fancybox" data-fancybox-group="mmscreenshots"
+               title="The last thing we need for deferred lighting is a depth buffer. We use this to calculate the world position of our surfaces later on."></a>
+            <a href="Images/Mineshaft8.png" class="fancybox" data-fancybox-group="mmscreenshots"
+               title="Using the normals and depths, we can calculate the light value at each pixel."></a>
+            <a href="Images/Mineshaft9.png" class="fancybox" data-fancybox-group="mmscreenshots" 
+               title="In the final step, we compose the lighting and the color buffer into one image."></a>
+		</div>
+	</div>
+    
+    
+	<div class="middle" id="soulBoundPage" style="display:none;">
+		<!--Description-->
+		<div class=doubletile>
+			<p class=text>
+                Soul Bound is a turn based tactical strategy game that grew out of a student project in the spring semester of 2015. 
+                The player explores a fantasy world, where magic is a powerful force of nature capable of granting, and taking life. 
+                Our protagonists make unlikely friends, and encounter bizarre and fantastic creatures on their journey.
+			</p><p class=text>
+				Our first demo left much to be desired in terms of maintainability.
+                This was my first experience leading a group of programmers, and it was a challenge. 
+                I can manage myself fine, but communicating effectively with a team is something I'll always have to work on. 
+			</p><p class=text>
+                When I wasn't writing code, I was working on the combat system design in my notebook. 
+                After several iterations, we found something that seemed to work well. 
+                Our demo contained numerous game-breaking bugs, and art without consistent style, 
+                but the ai worked, and the combat was solid. We had a playable game. 
+			</p><p class=text>
+                The following summer I continued work on the project with a smaller group. 
+                After the nightmare of bugs in the old version, I had to scrap almost all of the code. 
+                I took all of the mistakes that I'd made before, and used them to make something better. 
+                Not only was it more stable, but it added room for new features. 
+                I was able to add terrain elevation, fog of war, game saves, and a modular script based spell system. 
+                Our artists were able to produce higher quality assets too. 
+                The end result was a pretty good looking game. 
+			</p>
+		</div>
+		<!--Card Gallery-->
+		<div class=tile>
+            <a href="Images/soulbound1.png" class="fancybox" data-fancybox-group="sbscreenshots" title="">
+                <h3>Screenshots</h3>
+                <img class=tile src="Images/soulbound.png">
+            </a>
+            <a href="Images/soulbound2.png" class="fancybox" data-fancybox-group="sbscreenshots" title=""></a>
+            <a href="Images/soulbound3.png" class="fancybox" data-fancybox-group="sbscreenshots" title=""></a>
+            <a href="Images/soulbound4.png" class="fancybox" data-fancybox-group="sbscreenshots" title=""></a>
+            <a href="Images/soulbound5.png" class="fancybox" data-fancybox-group="sbscreenshots" title=""></a>
+            <a href="Images/soulbound6.png" class="fancybox" data-fancybox-group="sbscreenshots" title=""></a>
+            <a href="Images/soulbound7.png" class="fancybox" data-fancybox-group="sbscreenshots" title=""></a>
+            <a href="Images/soulbound8.png" class="fancybox" data-fancybox-group="sbscreenshots" title=""></a>
+            <a href="Images/soulbound9.png" class="fancybox" data-fancybox-group="sbscreenshots" title=""></a>
+		</div>
+	</div>
+    
+    
+	<div class="middle" id="atlasPage" style="display:none;">
+		<!--Link to website-->
+		<div class=tile>
+            <a target="_blank" href="http://igme-rit.github.io/">
+                <h3>Atlas Link</h3>
+                <img class=tile src="Images/atlas.png" alt="" />
+            </a>
+		</div>
+		<!--Description-->
+		<div class=doubletile>
+			<p class=text>
+                Atlas is a resource for students looking to learn the coding skills required for professional game development.
+                I worked on Atlas in the fall of 2016 at RIT through a grant from the Golisano College of Computing and Information Sciences (GCCIS).
+                Atlas uses Github to host hundreds of different code examples/tutorials,
+                and a website that organizes the information, and helps students track their progress through a branching skill tree of tutorials.
+			</p><p class=text>
+                Game development is an immense field, one that hasn't existed for very long, and game development education has only existed for a few years.
+                As technology evolves, professors are forced to rewrite curriculum over and over, and try to teach students the most useful information they can.
+                This problem is most pronounced when our students try to apply more advanced concepts in a language they may not be familiar with: C++.
+                Atlas provides a platform where students can gain a greater understanding of the tools that they have,
+                and can better use them to solve real world programming problems.
+			</p><p class=text>
+                My primary responsibility on the project was as a developer and curator of a core set of C++ and OpenGL tutorials.
+                My C++ work covered everything from Hello World to Templates and Lambda Expressions.
+                The OpenGL examples provide a path from drawing a triangle with a fixed shader pipeline,
+                to the use of more advanced concepts like deferred shading, particle simulations, etc.
+                I also developed the front end for the website to present the examples we had in a readable way.
+            </p>
+		</div>
+	</div>
+    
+    
+	<div class="middle" id="cheatingDeathPage" style="display:none;">
+		<!--Card Gallery-->
+		<div class=tile>
+            <a href="Images/ExampleCards.png" class="fancybox" data-fancybox-group="cards"
+               title="Players must follow the rules of the Attributes they acquire as the game progresses.">
+			<h3>Card Prototypes</h3>
+			<img class=tile src="Images/CheatingDeathIcon.png"></a>
+            <a href="Images/ExampleCards2.png" class="fancybox" data-fancybox-group="cards"
+               title="Cheat cards can be used defensively to stay alive, or offensively against other players."></a>
+            <a href="Images/ExampleCards3.png" class="fancybox" data-fancybox-group="cards"
+               title="Throughout the game, Instant cards can be drawn, causing random effects to the user."></a>
+		</div>
+		<!--Description-->
+		<div class=doubletile>
+			<p class=text>
+				Cheating Death is a tabletop board game that addresses the unpredictability of life and the inevitability of death.
+                Players use everything in their power to impede their own progress towards death as they accrue afflictions, and encounter life altering events.
+			</p><p class=text>
+                The game carries the appearance, and base mechanics of a simple roll and move style board game.
+                This may be initially off-putting to veteran gamers, as the genre has a negative reputation for lacking player engagement and agency.
+                Players who set aside their initial skepticism to play are often surprised to find that
+                Cheating Death offers engaging theme, meaningful decisions, and excellent pacing.
+			</p><p class=text>
+				Development began in the spring of 2014 after I pitched the idea as a student project.
+                At first, I didn't really know what I was doing, but when I recieved unanimously positive feedback from my initial playtesters
+                I knew that I'd stumbled upon something incredible.
+			</p><p class=text>
+                Since then, the game has become much more than just a student project.
+                Cheating Death is still very much in active development.
+                I'm always looking for tiny changes that I can make to improve the experience.
+                I routinely bring it to local gaming groups to playtest and get any feedback that I can.
+			</p>
+		</div>
+	</div>
+    
+    
+	<div class="middle" id="resumePage" style="display:none;">
+		<p><embed src="Resume/David%20Erbelding.pdf" width="900" height="1080"></p>
+	</div>
+    
+    
+</div>
+    
+<script type="text/javascript">
+    (function(){
+        var mainPageTab = document.getElementById("showMainPage").getElementsByTagName("div")[0];
+        var resumeTab = document.getElementById("showResumePage").getElementsByTagName("div")[0];
+        
+        var currentTab = mainPageTab;
+        
+        var mainPage = document.getElementById("mainPage");
+        var hatchitPage = document.getElementById("hatchitPage");
+        var mineshaftMayhemPage = document.getElementById("mineshaftMayhemPage");
+        var soulBoundPage = document.getElementById("soulBoundPage");
+        var atlasPage = document.getElementById("atlasPage");
+        var cheatingDeathPage = document.getElementById("cheatingDeathPage");
+        var resumePage = document.getElementById("resumePage");
+        
+        var currentPage = mainPage;
+        
+        document.getElementById("showMainPage").onclick=()=>{
+            currentPage.style = "display:none";
+            mainPage.style = "display:block";
+            currentPage = mainPage;
+            currentTab.className = "none";
+            mainPageTab.className = "current";
+            currentTab = mainPageTab;
+        }
+        document.getElementById("showResumePage").onclick=()=>{
+            currentPage.style = "display:none";
+            resumePage.style = "display:block";
+            currentPage = resumePage;
+            currentTab.className = "none";
+            resumeTab.className = "current";
+            currentTab = resumeTab;
+        }
+        document.getElementById("showHatchitPage").onclick=()=>{
+            currentPage.style = "display:none";
+            hatchitPage.style = "display:block";
+            currentPage = hatchitPage;
+        }
+        document.getElementById("showMineshaftMayhemPage").onclick=()=>{
+            currentPage.style = "display:none";
+            mineshaftMayhemPage.style = "display:block";
+            currentPage = mineshaftMayhemPage;
+        }
+        document.getElementById("showSoulBoundPage").onclick=()=>{
+            currentPage.style = "display:none";
+            soulBoundPage.style = "display:block";
+            currentPage = soulBoundPage;
+        }
+        document.getElementById("showAtlasPage").onclick=()=>{
+            currentPage.style = "display:none";
+            atlasPage.style = "display:block";
+            currentPage = atlasPage;
+        }
+        document.getElementById("showCheatingDeathPage").onclick=()=>{
+            currentPage.style = "display:none";
+            cheatingDeathPage.style = "display:block";
+            currentPage = cheatingDeathPage;
+        }
+    
+    
+    }());
+</script>
+</body>
+</html>

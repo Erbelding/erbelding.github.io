@@ -1,0 +1,279 @@
+body {
+	background-color: #BBB;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 18px;
+	padding: 0;
+	margin: 0;
+}
+
+a:link {
+	color: black;
+	text-decoration:none;
+}
+
+a:visited{
+	color: black;
+}
+
+
+
+h1 {
+	text-align: left;
+    color: #fff;
+	padding: 72px 24px 64px 24px;
+	font-family: 'Monda', sans-serif;
+	font-size: 48px;
+    margin: 0;
+}
+
+h2 {
+	text-align: left;
+    color: #fff;
+	padding: 0 24px;
+	font-family: 'Monda', sans-serif;
+	font-size: 16px;
+	margin: 0;
+}
+
+h3 {
+	text-align: left;
+    background-color: #fff;
+	padding: 0 12px;
+	font-family: 'Monda', sans-serif;
+	font-size: 24px;
+    margin: 0;
+}
+
+p {
+	text-align: left;
+	text-indent: 12px;
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
+p.text {
+	padding: 0 12px;
+	line-height:  24px;
+	text-align: left;
+	text-indent: 12px;
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
+#wrapper {
+	margin: 0 auto;
+	width:960px;
+	padding-top: 12px;
+}
+
+#header {
+	margin: 12px auto;
+	width: 100%;
+    height: 360px;
+	background-image: url("Images/UnicornExtended.png");
+    background-size: 100%;
+}
+
+#nav {
+	margin: 12px auto;
+	width: 100%;
+	height: 32px;
+}
+
+#nav div {
+	float: left;
+	background-color: #BBB;
+	font-family: 'Monda', sans-serif;
+	
+	padding: 0 12px;
+	height: 36px;
+	
+	font-size: 21px;
+}
+
+#nav div:hover {
+	height: 50px;
+	font-size: 24px;
+	background-color: #DDD;
+    cursor: pointer;
+}
+
+#nav div.current {
+	margin-bottom: 0;
+	height: 50px;
+	background-color: white;
+}
+
+.middle {
+	margin: 12px auto;
+	width: 100%;
+	min-height: 600px;
+	height: 1%; overflow: hidden;
+	
+	background-color:  white;
+}
+
+
+
+div.tile {
+	position: relative;
+	margin: 40px;
+	float: left;
+	width: 240px;
+	height: 240px;
+	
+	background-color: #BBB;
+	outline: 3px solid #BBB;
+	overflow: hidden;
+    cursor: pointer;
+}
+
+div.tile h3 {
+	font-size: 24px;
+	background-color: white;
+	outline: 3px solid #BBB;
+	position: absolute;
+	right: 0;
+}
+
+div.doubletile {
+	position: relative;
+	margin: 40px;
+	float: left;
+	width: 560px;
+	height: 560px;
+	
+	background-color: #FFF;
+	outline: 3px solid #BBB;
+	overflow: hidden;
+}
+div.doubletile h1 {
+	font-size: 24px;
+	background-color: white;
+	outline: 3px solid #BBB;
+	position: absolute;
+	right: 0;
+}
+
+img.tile {
+	height: 100%;
+	width: 100%;
+}
+
+
+
+
+#display {
+	max-height: 600px;
+	max-width: auto;
+}
+
+
+
+
+
+
+
+
+
+@media handheld {
+
+
+div.tile hide{
+    display: none;
+}
+
+#wrapper{
+	width:480px;
+	margin:0 auto;
+}
+
+	
+#header{
+	width: 100%;
+	background-color: #BBB;
+}
+
+#nav{
+	width: 100%;
+	height: 1%; overflow: hidden;
+}
+
+#nav div{
+	float: left;
+	font-family: 'Monda', sans-serif;
+	font-size: 24px;
+	
+}
+
+#nav div:hover{
+	font-size: 28px;
+	height: 36px;
+	background-color: #BBB;
+}
+	
+#nav div.current {
+	margin-bottom: 0;
+	height: 36px;
+	background-color: #BBB;
+}
+	
+
+#middle{
+	margin: 12px auto;
+	width: 100%;
+	min-height: 600px;
+	height: 1%; overflow: hidden;
+	
+	background-color:  white;
+}
+	
+div.tile {
+	float: left;
+	margin: 20px;
+	width: 200px;
+	height: 200px;
+	
+	background-color: #BBB;
+	outline: 0px solid black;
+	overflow: hidden;
+}
+	
+div.doubletile {
+	float: left;
+	margin: 20px;
+	width: 440px;
+	height: 440px;
+	
+	background-color: #FFF;
+	outline: 0px solid black;
+	overflow: hidden;
+}
+	
+img.tile {
+	height: 100%;
+	width: 100%;
+}
+
+div.tile h1 {
+	font-size: 20px;
+	background-color: white;
+	outline: 3px solid #BBB;
+	position: absolute;
+	right: 0;
+}
+    
+p.text {
+	padding: 0 14px;
+	line-height:  18px;
+	text-align: left;
+	text-indent: 14px;
+	font-family: sans-serif;
+	font-size: 14px;
+}
+section.hidemobile {
+	visibility:none;
+    display: none;
+}
+}
